@@ -1,0 +1,51 @@
+html,
+body {
+	background-color: #111111;
+}
+#header {
+	height: 35px;
+	background-color: #141241;
+}
+.pollContainer {
+	padding: 10%;
+	text-align: center;
+}
+input {
+	border: none;
+	border-top: 3px solid #7c000000;
+	padding: 0px 20px;
+	font-weight: 700;
+	color: #dfc1c1;
+	border-radius: 10px;
+	background-color: #111111;
+	border-bottom: 3px solid #dfc1c1;
+	transition: all 500ms;
+}
+.btn-form {
+	color: #dfc1c1;
+	margin-bottom: 13px;
+	background-color: #111111;
+}
+.btn-form:hover {
+	background-color: #dfc1c1;
+	color: #ffffff;
+}
+.inputDiv {
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+}
+#resultContainer {
+	padding: 10%;
+	text-align: center;
+	color: #dfc1c1;
+	padding: 10%;
+}
+#resultContainer label,
+#resultContainer input {
+	font-size: 24px;
+}
+#resultContainer label {
+	font-weight: 700;
+	margin: 0 10px;
+}
