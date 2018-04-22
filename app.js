@@ -11,7 +11,8 @@ const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 
 // Connect to the cloud database
-// const dbpass = process.env.dbPass;
+// const dbpass = process.env.dbass;
+const port = process.env.PORT || 3000;
 const uri =
 	'mongodb+srv://voteAppUser:voteAppPass@voteappdatabase-lq6ym.mongodb.net/test';
 
@@ -37,6 +38,6 @@ app.use(bodyParser.json());
 app.use('/', router);
 
 //Initialize server
-app.listen(process.env.PORT, () => {
-	console.log(`Express server runing on port ${process.env.PORT}`);
+app.listen(port, () => {
+	console.log(`Express server runing on port ${port}`);
 });

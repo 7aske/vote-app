@@ -3,6 +3,18 @@
 		<form action="/newpoll" method="post">
 			<div class="pollContainer" id="poll">
 				<input name="title" type="text" required placeholder="Title" id="title">
+				<div class="inputDiv">
+					<input name="option0" placeholder="Option" required="" type="text">
+					<button disabled class="btn btn-form" type="button" onclick="Option.removeRemove(event)">
+						<i class="fa fa-trash"></i>
+					</button>
+				</div>
+				<div class="inputDiv">
+					<input name="option1" placeholder="Option" required="" type="text">
+					<button disabled class="btn btn-form" type="button" onclick="Option.removeRemove(event)">
+						<i class="fa fa-trash"></i>
+					</button>
+				</div>
 			</div>
 			<div class="text-center">
 				<button class="btn btn-form" type="button" id="newOptionBtn">

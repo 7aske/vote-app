@@ -25,16 +25,47 @@ input {
 	border-bottom: 3px solid #dfc1c1;
 	transition: all 500ms;
 }
+.linkContainer {
+	border-bottom: 1px solid #dfc1c1;
+	padding: 40px 40px 60px 40px;
+	text-align: center;
+	margin: 10px;
+	border-radius: 5px;
+}
+.linkContainer:hover {
+	background-color: #dfc1c1;
+}
+.linkContainer:hover span {
+	color: #111111;
+}
+.link {
+	color: coral;
+	font-weight: 700;
+}
+.link:hover {
+	color: #111111;
+}
+.nameText {
+	width: 50%;
+	float: left;
+	color: lightseagreen;
+}
+.voteText {
+	width: 50%;
+	float: right;
+	color: hotpink;
+}
+
 .inputDiv {
 	display: block;
-	margin: 10px auto;
+	margin: 15px auto;
 	text-align: center;
 }
 
 .btn-form {
 	color: #dfc1c1;
 	margin-left: 10px;
-	margin-bottom: 5px;
+
 	background-color: #111111;
 	font-weight: 700;
 }

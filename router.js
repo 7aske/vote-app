@@ -20,8 +20,14 @@ router.get('/', (req, res) => {
 });
 
 // GET access to the database JSON file for testing
-router.get('/db', (req, res) => {
-	//res.sendFile(path.join(__dirname, 'public/db/db.json'));
+router.get('/allpolls', (req, res) => {
+	Poll.find({})
+		.exec()
+		.then(result =>
+			res.render('allpolls', {
+				body: JSON.stringify(result)
+			})
+		);
 });
 
 // Basic ID based route to individual polls

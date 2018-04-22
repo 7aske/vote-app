@@ -1,6 +1,6 @@
 // Object literal that creates input tags for adding new options
 let Option = {
-	index: 0, // Starting index of the first option
+	index: 2, // Starting index of the first option
 	addInput: function() {
 		// Crate the parent element for the input and remove button
 		let inputDiv = document.createElement('div');
