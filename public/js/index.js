@@ -1,60 +1,38 @@
-var form = document.querySelector('#poll');
-
-var Option = {
-	index: -1,
+// Object literal that creates input tags for adding new options
+let Option = {
+	index: 0, // Starting index of the first option
 	addInput: function() {
-		this.index++;
+		// Crate the parent element for the input and remove button
 		let inputDiv = document.createElement('div');
 		inputDiv.setAttribute('class', 'inputDiv');
 
+		// Create the input element
 		let input = document.createElement('input');
-		input.setAttribute('name', `option${this.index}`);
-		input.setAttribute('type', 'text');
-		inputDiv.appendChild(input);
+		input.setAttribute('name', `option${this.index}`); // Add a unique index
+		input.setAttribute('type', 'text'); // Require the input to be text
+		input.setAttribute('placeholder', 'Option'); // Add a placeholder to inform the user
+		input.required = true; // Set the input to be required
+		inputDiv.appendChild(input); // Add the input the parent div
 
-		let button = document.createElement('button');
-		button.classList.add('btn', 'btn-default', 'btn-form');
-		button.setAttribute('type', 'button');
-		button.setAttribute('onclick', 'Option.confirm(event)');
-		button.innerHTML = `<i class="fa fa-check"></i>`;
-		inputDiv.appendChild(button);
-
+		// Create the remove button
 		let buttonRemove = document.createElement('button');
-		buttonRemove.classList.add('btn', 'btn-default', 'btn-form');
-		buttonRemove.setAttribute('type', 'button');
-		buttonRemove.setAttribute('onclick', 'Option.remove(event)');
-		buttonRemove.innerHTML = `<i class="fa fa-trash"></i>`;
-		inputDiv.appendChild(buttonRemove);
+		buttonRemove.classList.add('btn', 'btn-form');
+		buttonRemove.setAttribute('type', 'button'); // Prevent button from submiting the form
+		buttonRemove.setAttribute('onclick', 'Option.removeRemove(event)'); // Add functionality
+		buttonRemove.innerHTML = `<i class="fa fa-trash"></i>`; // Trashcan icon
+		inputDiv.appendChild(buttonRemove); // Add the button to the parent div
 
-		return inputDiv;
+		this.index++; // Increase the index
+		return inputDiv; // Return the created div with input and button elements
 	},
-	confirm: function(event) {
-		let button = event.target;
-		let input = event.target.previousSibling;
-		button.nextSibling.disabled = true;
-		button.nextSibling.style.filter = 'opacity(0.1)';
-		input.readOnly = true;
-		input.style.borderTopColor = '#dfc1c1ff';
-		button.innerHTML = '<i class="fa fa-edit"></i>';
-		button.setAttribute('onclick', 'Option.edit(event)');
-	},
-	edit: function(event) {
-		let button = event.target;
-		let input = event.target.previousSibling;
-		button.nextSibling.disabled = false;
-		button.nextSibling.style.filter = 'opacity(1)';
-		input.readOnly = false;
-		input.style.borderTopColor = '#dfc1c100';
-		button.innerHTML = '<i class="fa fa-check"></i>';
-		button.setAttribute('onclick', 'Option.confirm(event)');
-	},
-	remove: function(event) {
+	removeRemove: function(event) {
+		// Removing the option from the form
 		event.target.parentElement.remove();
 	}
 };
-function submitForm() {
-	form.submit();
-}
+
+// Render new options
 document.querySelector('#newOptionBtn').addEventListener('click', function() {
-	form.appendChild(Option.addInput());
+	let form = document.querySelector('#poll');
+	form.appendChild(Option.addInput()); // addInput function returns a HTML element
 });

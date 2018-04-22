@@ -1,9 +1,20 @@
 <div class="container-fluid">
-	<div class="container pollContainer">
-		<form action="/newpoll" method="post" id="poll">
+	<div class="container">
+		<form action="/newpoll" method="post">
+			<div class="pollContainer" id="poll">
+				<input name="title" type="text" required placeholder="Title" id="title">
+			</div>
+			<div class="text-center">
+				<button class="btn btn-form" type="button" id="newOptionBtn">
+					<i class="fa fa-plus"></i>
+				</button>
+				<button class="btn btn-form" type="submit">
+					<i class="fa fa-check"></i>
+				</button>
+			</div>
+
 		</form>
-		<button class="btn btn-form" id="newOptionBtn">Add option</button>
-		<button class="btn btn-form" onclick="submitForm();">Done</button>
+
 	</div>
 </div>
 <script src="../js/index.js"></script>
