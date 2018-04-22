@@ -24,7 +24,7 @@ router.get('/allpolls', (req, res) => {
 	Poll.find({})
 		.exec()
 		.then(result =>
-			res.render('allpolls', {
+			res.render('allPolls', {
 				body: JSON.stringify(result)
 			})
 		)
