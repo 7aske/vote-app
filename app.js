@@ -20,9 +20,6 @@ mongoose
 	.then(result => console.log(result))
 	.catch(err => console.log(err));
 
-// Define port
-const port = process.env.port || 3000;
-
 // Make static resources folders available
 app.use(express.static('public'));
 app.use(express.static('views'));
@@ -40,6 +37,6 @@ app.use(bodyParser.json());
 app.use('/', router);
 
 //Initialize server
-app.listen(port, () => {
-	console.log(`Express server runing on port ${port}`);
+app.listen(process.env.PORT, () => {
+	console.log(`Express server runing on port ${process.env.PORT}`);
 });
