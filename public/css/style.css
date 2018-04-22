@@ -8,8 +8,30 @@ body {
 	background-color: #dfc1c1;
 }
 .btn-head {
-	margin-top: -5px;
+	margin-top: -8px;
 	border-radius: 5px;
+}
+.dropdown {
+	transition: all 250ms;
+	position: absolute;
+	display: hidden;
+	color: #111111;
+	left: -4px;
+	top: -46px;
+	background-color: #dfc1c1;
+	border-radius: 5px;
+	border-top: none;
+	border-right: 2px solid #a79292;
+	border-left: 2px solid #a79292;
+	border-bottom: 2px solid #a79292;
+	width: 52px;
+}
+.btn-head {
+	position: relative;
+}
+.btn-head:hover .dropdown {
+	display: block;
+	transform: translateY(86px);
 }
 #poll {
 	padding: 10%;
@@ -25,6 +47,7 @@ input {
 	border-bottom: 3px solid #dfc1c1;
 	transition: all 500ms;
 }
+
 .linkContainer {
 	border-bottom: 1px solid #dfc1c1;
 	padding: 40px 40px 60px 40px;
@@ -72,6 +95,9 @@ input {
 .btn-form:hover {
 	background-color: #dfc1c1;
 	color: #000000;
+}
+.btn-form i {
+	font-size: 24px;
 }
 
 #title {
