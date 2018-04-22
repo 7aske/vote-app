@@ -27,7 +27,8 @@ router.get('/allpolls', (req, res) => {
 			res.render('allpolls', {
 				body: JSON.stringify(result)
 			})
-		);
+		)
+		.catch(err => console.log(err));
 });
 
 // Basic ID based route to individual polls
