@@ -76,12 +76,15 @@ router.post('/newpoll', (req, res) => {
 		}
 	}
 
+	// Create a new poll based on pollModel
 	let poll = new Poll({
 		pollId: id,
 		pollTitle: req.body.title,
 		pollOptions: options,
 		pollVotes: []
 	});
+
+	// Submit the poll to the database
 	poll
 		.save()
 		.then(result => console.log(result))
@@ -110,6 +113,9 @@ router.post('/:pollid/:vote', (req, res) => {
 		voteOption: vote,
 		votePoints: 1
 	};
+
+	// There are two different ways of writing to the database
+	// IP based vote checking is not implemented yet
 	let poll = new Object();
 	Poll.findOne({ pollId: id })
 		.exec()
@@ -121,6 +127,8 @@ router.post('/:pollid/:vote', (req, res) => {
 		voteOption: vote,
 		votePoints: 1
 	});
+
+	// Update the database with the given poll id with votes
 	Poll.update({ pollId: id }, { $push: { pollVotes: newVote } })
 		.exec()
 		.then(

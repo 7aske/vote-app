@@ -40,7 +40,7 @@ function PollOption(option, votes) {
 			let button = document.createElement('button');
 			button.classList.add('btn', 'btn-default', 'btn-form', 'btn-vote');
 			button.innerHTML = '<i class="fa fa-plus-square"></i>';
-			button.setAttribute('type', `submit`);
+			button.setAttribute('type', 'submit');
 
 			// Append created elements to the form
 			form.appendChild(optionName);
@@ -85,7 +85,11 @@ function PollOption(option, votes) {
 function renderPoll() {
 	// Get data written to document
 	let data = JSON.parse(document.getElementById('data').innerHTML);
-	// Sum of all votes used for visualization bar rendering
+
+	// Clear contents of the data <div>
+	document.getElementById('data').innerHTML = '';
+
+	// Init sum of all votes used for visualization bar rendering
 	let voteSum = 0;
 
 	// Set the title of the page to poll title
