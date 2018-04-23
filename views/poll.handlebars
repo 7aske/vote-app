@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row" class="text-center">
+            <h1 id="title" class="w-100"></h1>
+            <div class="w-100 text-center">
+                <input class="text-center" id="copyUrlText"></input>
+                <button onclick="copyLocation(event)" class="btn btn-form btn-copy">
+                    <i class="fa fa-copy"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="resultContainer">
+
+            </div>
+
+            <div class="col-md-12" id="barsContainer">
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="data" style="display: none;">
+    {{body}}
+</div>
+
+<script src="../js/poll.js"></script>
